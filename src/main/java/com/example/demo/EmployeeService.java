@@ -18,9 +18,9 @@ public class EmployeeService implements EmployeeInterface{
 		emplist=new ArrayList<Employee>();
 		
 			Employee e=new Employee(1, "yogesh", "here", "nanded", "9561418127");
-			Employee e1=new Employee(2, "yogesh1", "here1", "nanded1", "95614181271");
-			Employee e2=new Employee(3, "yogesh2", "here2", "nanded2", "95614181272");
-			Employee e3=new Employee(4, "yogesh3", "here3", "nanded3", "95614181273");
+			Employee e1=new Employee(25, "yogesh1", "here1", "nanded1", "95614181271");
+			Employee e2=new Employee(32, "yogesh2", "here2", "nanded2", "95614181272");
+			Employee e3=new Employee(44, "yogesh3", "here3", "nanded3", "95614181273");
 			emplist.add(e);
 			emplist.add(e1);
 			emplist.add(e2);
@@ -59,7 +59,8 @@ public class EmployeeService implements EmployeeInterface{
 	@Override
 	public ArrayList<Employee> deleteEmployee(int id) {
 		// TODO Auto-generated method stub
-		Iterator<Employee> iterate=emplist.iterator();
+		
+		/*Iterator<Employee> iterate=emplist.iterator();
 		while(iterate.hasNext())
 		{
 			Employee e=(Employee)iterate.next();
@@ -68,8 +69,18 @@ public class EmployeeService implements EmployeeInterface{
 				emplist.remove(e);
 				
 			}
+		}*/
+
+		for(int i=0;i<emplist.size();i++)
+		{
+			Employee e=(Employee)emplist.get(i);
+			if(e.getId()==id)
+			{
+				emplist.remove(i);
+				return emplist;
+			}
 		}
-	return emplist;
+	return null;
 	}
 
 	
