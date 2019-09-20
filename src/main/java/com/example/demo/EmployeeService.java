@@ -51,9 +51,18 @@ public class EmployeeService implements EmployeeInterface{
 	}
 
 	@Override
-	public void updateEmployee(Employee e) {
+	public void updateEmployee(int id) {
 		// TODO Auto-generated method stub
 		
+		for(int i=0;i<emplist.size();i++)
+		{
+			Employee e1=(Employee)emplist.get(i);
+			if(id==e1.getId())
+			{
+				Employee e=new Employee(11, "abc", "abc", "abc", "3561");
+				emplist.set(i,e);
+			}
+		}
 	}
 
 	@Override
